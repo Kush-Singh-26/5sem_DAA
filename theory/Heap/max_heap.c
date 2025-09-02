@@ -2,17 +2,17 @@
 
 int lchild(int i)
 {
-    return 2*i;
+    return 2*i + 1;
 }
 
 int rchild(int i)
 {
-    return 2*i + 1;
+    return 2*i + 2;
 }
 
 int parent(int i)
 {
-    return i/2;
+    return (i-1)/2;
 }
 
 void heapify(int a[], int i, int n)
@@ -24,7 +24,7 @@ void heapify(int a[], int i, int n)
 
     if(l < n && a[largest] < a[l])
         largest = l;
-    if(r < n & a[largest] < a[r])
+    if(r < n && a[largest] < a[r])
         largest = r;
     if(largest != i)
     {
